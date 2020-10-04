@@ -1,6 +1,6 @@
 
-{% load static %} 능
-<!-- 쟝고에서 사용하는 템플릿태그 https://opentutorials.org/course/3718/24665 여기서 확인 가 -->
+{% load static %}
+<!-- 쟝고에서 사용하는 템플릿태그 https://opentutorials.org/course/3718/24665 여기서 확인 가능 -->
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel ="stylesheet" href="{% static 'css/cover.css' %}">
@@ -23,7 +23,7 @@
       <h1 class="cover-heading">Cover your page.</h1>
       <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
       <p class="lead">
-        <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+        <a href="{% url 'blogMain' %}" class="btn btn-lg btn-secondary">Learn more</a>
       </p>
     </main>
 
