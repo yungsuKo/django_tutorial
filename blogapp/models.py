@@ -11,4 +11,10 @@ class Blog(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, default=1)
     body = RichTextUploadingField()
 
-
+# comment 기능 추가
+class Comment(models.Model):
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, null=True)
+    comment_date = models.DateTimeField(auto_now_add=True)
+    comment_user = models.TextField(max_length=20)
+    comment_thumbnail_url = models.TextField(max_length=300)
+    comment_textfield = models.TextField()
