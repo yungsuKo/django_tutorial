@@ -1,5 +1,5 @@
 from django import forms
-from .models import Blog
+from .models import Blog, Comment
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 
@@ -17,4 +17,14 @@ class CreateBlog(forms.ModelForm):
                 attrs={'class': 'custom-select'},
             ),
             'body': forms.CharField(widget=CKEditorUploadingWidget()),
+        }
+
+
+class BlogCommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+
+        fields = ['comment_textfield']
+        widgets = {
+            'comment_textfield': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'cols': 40})
         }
